@@ -680,29 +680,40 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 /* --- GitHub Links on Project Cards --- */
-.project-links {
+.project-card .project-links {
     margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Adds a subtle divider line */
 }
 
-.btn-github {
-    display: inline-flex;
+.project-card .btn-github {
+    display: inline-flex !important;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     color: var(--text-primary);
     font-size: 0.85rem;
     font-weight: 500;
     transition: all var(--transition);
-    background-color: transparent;
+    background-color: var(--bg-surface); /* Gives the button a slight background */
 }
 
-.btn-github:hover {
-    border-color: var(--text-primary);
+.project-card .btn-github svg {
+    transition: transform var(--transition);
+}
+
+.project-card .btn-github:hover {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.05);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
 }
 
+.project-card .btn-github:hover svg {
+    transform: scale(1.1);
+}
